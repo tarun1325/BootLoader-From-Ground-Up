@@ -1,0 +1,27 @@
+#*********************************************************************
+#	Author 	: Tarun Jain
+#	Roll No.: MT2015120
+#	Project	: Operating System Development
+#	Module	: Boot Loader - Version 1.0 - A Simple Bootloader
+#	File	: Bochs Configuration File - BochsConfig.bxrc
+#*********************************************************************
+
+# ROM and VGA BIOS images ( Images come with Bochs)-------------------
+
+romimage:	file=BIOS-bochs-latest, address=(0xFFFFF - 0x20000)
+		
+		# Tells Bochs to place the BIOS in Memory (Virtual RAM)
+		# BIOS must end at the end of first Megabyte (0xFFFFF)		
+
+vgaromimage:	file=VGABIOS-lgpl-latest
+
+
+# boot from floppy using our disk image ------------------------------
+
+floppya:	1_44=a:,	status=inserted		# Boot from drive A
+
+# logging and reporting	----------------------------------------------
+
+log:		OSDev.log	#All errors and info logs will output to OSDev.log
+error:		action=report
+info:		action=report
